@@ -12,14 +12,45 @@
     height: 60px;
 }
 .nav{
+    display: flex;
     background-color: black;
     color: white;
-    padding: 5%;
+    padding: 3%;
+    margin: 3%;
 }
-#logo{
-    width: 50px;
-    height: 50px;
+.logo{
+    width: 3%;
+    height: 3%;
+}
+#intro{
+    padding-top: 2%;
 }
 #title{
     padding: 34px;
+}
+.nav-tag{
+     background-color: black;
+     color: white;
+     padding-right: 4%;
+    padding-left: 4%;
+
+ }
+.nav-tag:hover{
+    border: 1px solid #ffffff;
+
+}
+main{
+    padding: 3%;
+    margin: 3%;
+}
+footer{
+    background-color: black;
+    display: flex;
+    color: white;
+    padding: 3%;
+    margin: 3%;
+}
+.btn{
+    color: white;
+    background-color: black;
 }
