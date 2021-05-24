@@ -54,3 +54,58 @@ footer{
     color: white;
     background-color: black;
 }
+.icon{
+    font-size: 75px;
+}
+th{
+    padding: 3px;
+    border: 1px solid black;
+}
+table{
+    margin: 34px;
+    width: 40%;
+}
+.data{
+    margin: 34px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#Process, #BurTime, #ArrTime{
+    border: 1px solid black;
+}
+label{
+    padding:  0  30px  0 30px;
+}
+#add{
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #7fb6b6;
+}
+#add:hover{
+border: 1px solid red;
+}
+#Process, #BurTime, #ArrTime {
+padding: 10px;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+
+}
+#graphic{
+    width: 150px;
+    height: 40px;
+    background-color: #7fb6b6;
+}
+.sub-content{
+    margin-top: 34px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#graphic:hover{
+    border: 1px solid red;
+}
