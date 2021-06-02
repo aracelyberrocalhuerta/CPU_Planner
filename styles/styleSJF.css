@@ -1,0 +1,97 @@
+/* HTML */
+*{
+    border:0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Header */
+header{
+    height: 60%;
+}
+/* Nav */
+.logo{
+    width: 3%;
+    height: 3%;
+}
+.nav{
+    display: flex;
+    background-color: black;
+    color: white;
+    padding: 3%;
+    margin: 3%;
+}
+.nav-tag{
+    background-color: black;
+    color: white;
+    padding-right: 4%;
+    padding-left: 4%;
+
+}
+.nav-tag:hover{
+    border: 1px solid #ffffff;
+
+}
+
+/* Main */
+
+main{
+    padding: 3%;
+    margin: 3%;
+}
+
+#title{
+    padding: 34px;
+}
+
+    .form-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-bottom: 5%;
+        align-items: center;
+    }
+        .ArrTime-row, .BurTime-row, .Button-row{
+            display: flex;
+            flex-direction: row;
+        }
+            #Process, #BurTime, #ArrTime {
+                padding: 10px;
+                border: 1px solid black;
+            }
+
+
+    #table-row{
+        display: flex;
+        flex-direction: column;
+    }
+
+th, td{
+    width: 100px;
+    padding: 3px;
+    border: 1px solid black;
+}
+
+
+
+label{
+    padding:  0  30px  0 30px;
+}
+#add{
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #7fb6b6;
+}
+#add:hover{
+    border: 1px solid red;
+}
+
+
+/* Footer */
+footer{
+    background-color: black;
+    display: flex;
+    color: white;
+    padding: 3%;
+    margin: 3%;
+}

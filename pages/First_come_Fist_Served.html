@@ -7,16 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#141318">
-    <link rel="icon" id="favicon" href="img/logo_white.svg" type="image/svg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" id="favicon" href="../img/logo_white.svg" type="image/svg">
+    <link rel="stylesheet" href="../styles/styleFCFS.css">
     <title>CPU Planner</title>
 </head>
 <body>
 <header class="header">
 
     <div class="nav">
-        <a href="index.html" class="logo"><img src="img/logo_white.svg" alt="logo"></a>
-        <a href="index.html" class="nav-tag">
+        <a href="../index.html" class="logo"><img src="../img/logo_white.svg" alt="logo"></a>
+        <a href="../index.html" class="nav-tag">
             <button class="btn">Home</button>
         </a>
         <a href="First_come_Fist_Served.html" class="nav-tag">
@@ -37,27 +37,26 @@
 <main>
     <h1 id="title">First come Fist Served</h1>
     <div class="data">
-        <label for="Process">Process:</label><br>
-        <input type="text" id="Process" name="Process" value=""><br>
+
         <label for="ArrTime">Arrival time:</label><br>
         <input type="text" id="ArrTime" name="Process" value=""><br>
         <label for="BurTime">Burst time:</label><br>
         <input type="text" id="BurTime" name="Process" value=""><br>
-        <input type="submit" id="add" value="Add" onclick="add_data()">
+        <input type="submit" id="add" value="Add" onclick="add_dataFCFS()">
     </div>
     <div class="content">
         <div class="main-table">
             <table id="table">
                 <tr >
                     <th>Process</th>
-
                     <th>Arrival time</th>
-
                     <th>Burst time</th>
-
-
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>T</th>
+                    <th>E</th>
+                    <th>P</th>
                 </tr>
-
             </table>
 
             <table id="avg-table">
@@ -67,21 +66,19 @@
                 </tr>
             </table>
         </div>
+    </div>
+    <div class="sub-content">
+        <input type="submit" id="graphic" value="Generate Graphic" onclick="generateFCFS();" >
+        <div id="graph">
+            <div id="graph-1">
 
-        <div class="sub-content">
-            <input type="submit" id="graphic" value="Generate Graphic" onclick="generate();" >
-            <div id="graph">
-                <div id="graph-1">
-
-                </div>
-                <div id="graph-2">
-
-                </div>
+            </div>
+            <div id="graph-2">
 
             </div>
 
-
         </div>
+
 
     </div>
 
@@ -89,6 +86,6 @@
 <footer>
     <p>&copy;Copyright notice</p>
 </footer>
-<script type="text/javascript" src="functions.js"></script>
+<script type="text/javascript" src="../functions/functions.js"></script>
 </body>
 </html>
