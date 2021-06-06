@@ -62,7 +62,8 @@ function generate_mini_table() {
     Arrayvalues.push([parseInt(ArrTime), parseInt(BurTime), Process]);
 
     cont_process++;
-
+    ArrTime = document.getElementById('ArrTime').value="";
+    BurTime = document.getElementById('BurTime').value="";
 }
 
 function generate_max_table(start) {
@@ -106,7 +107,8 @@ function generate_max_table(start) {
     }
 
     console.table(Arrayvalues);
-    //suma
+
+    //Start
 
 
     if (Arrayvalues.length == 1) {
@@ -141,7 +143,33 @@ function generate_max_table(start) {
         Arrayvalues[Arrayvalues.length - 1].push(suma);
     }
 
+    //End
+    for (let i = 0; i < Arrayvalues.length; i++) {
 
+        Arrayvalues[i].push(Arrayvalues[i][3]+Arrayvalues[i][1])
+
+    }
+
+    //T
+    for (let i = 0; i < Arrayvalues.length; i++) {
+
+        Arrayvalues[i].push(Arrayvalues[i][4]-Arrayvalues[i][0])
+
+    }
+
+    //E
+    for (let i = 0; i < Arrayvalues.length; i++) {
+
+        Arrayvalues[i].push(Arrayvalues[i][5]-Arrayvalues[i][1])
+
+    }
+
+    //P
+    for (let i = 0; i < Arrayvalues.length; i++) {
+
+        Arrayvalues[i].push(Arrayvalues[i][5]/Arrayvalues[i][1])
+
+    }
 
 
     colocar_datos();
@@ -196,14 +224,20 @@ function colocar_datos() {
 
         //End
 
-        col_5.innerText = burTime_sum2;
+        col_5.innerText = Arrayvalues[i][4];
         row_table.appendChild(col_5);
 
         //T
-        col_6.innerText = T;
+        col_6.innerText = Arrayvalues[i][5];
         row_table.appendChild(col_6);
 
         //E
+        col_7.innerText = Arrayvalues[i][6];
+        row_table.appendChild(col_7);
+
+        //P
+        col_8.innerText = Arrayvalues[i][7];
+        row_table.appendChild(col_8);
 
 
         max_table.appendChild(row_table);
@@ -257,7 +291,7 @@ function generate_chart() {
         div1.appendChild(text);
     }
 
-    for (let x = 0; x < cont_process + 10; x++) {
+    for (let x = 0; x < cont_process + 15; x++) {
         num = document.createElement("h4");
         num.innerText = x;
         num.setAttribute("id", "number1")
