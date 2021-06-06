@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#141318">
     <link rel="icon" id="favicon" href="../img/logo_white.svg" type="image/svg">
-    <link rel="stylesheet" href="../styles/styleFCFS.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+
     <title>CPU Planner</title>
 </head>
 <body>
@@ -31,44 +32,62 @@
         <a href="No_Priorities.html" class="nav-tag">
             <button class="btn">NP</button>
         </a>
-
     </div>
 </header>
 <main>
-    <h1 id="title">First come Fist Served</h1>
-    <div class="data">
-
-        <label for="ArrTime">Arrival time:</label><br>
-        <input type="text" id="ArrTime" name="Process" value=""><br>
-        <label for="BurTime">Burst time:</label><br>
-        <input type="text" id="BurTime" name="Process" value=""><br>
-        <input type="submit" id="add" value="Add" onclick="add_dataFCFS()">
+    <div class="title-row">
+        <h1 id="title">First Come First Served</h1>
     </div>
-    <div class="content">
-        <div class="main-table">
-            <table id="table">
-                <tr>
-                    <th>Process</th>
-                    <th>Arrival time</th>
-                    <th>Burst time</th>
-                    <th>Start</th>
-                    <th>End</th>
-                    <th>T</th>
-                    <th>E</th>
-                    <th>P</th>
-                </tr>
-            </table>
-
-            <table id="avg-table">
-                <tr>
-                    <th>Average</th>
-                    <th id="average"></th>
-                </tr>
-            </table>
+    <div class="form-row">
+        <div class="ArrTime-row">
+            <label for="ArrTime">Arrival time:</label><br>
+            <input type="text" id="ArrTime" name="Process" value="">
+        </div>
+        <div class="BurTime-row">
+            <label for="BurTime">Burst time:</label><br>
+            <input type="text" id="BurTime" name="Process" value="">
+        </div>
+        <div class="Button-row">
+            <input type="submit" id="add" value="Add" onclick="generate_mini_table()">
         </div>
     </div>
+
+    <table id="mini-table">
+
+        <tr class="top-table">
+
+            <th>Process</th>
+            <th>Arrival time</th>
+            <th>Burst time</th>
+
+        </tr>
+
+    </table>
+
+    <table id="big-table">
+
+        <tr class="top-table">
+
+            <th>Process</th>
+            <th>Arrival time</th>
+            <th>Burst time</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>T</th>
+            <th>E</th>
+            <th>P</th>
+
+        </tr>
+
+    </table>
+    <table id="avg-table-row">
+        <tr class="bottom-table">
+            <th id="avg-title">Average</th>
+            <th id="average"></th>
+        </tr>
+    </table>
     <div class="sub-content">
-        <input type="submit" id="graphic" value="Generate Graphic" onclick="generateFCFS();">
+        <input type="submit" id="graphic" value="Generate Graphic" onclick="generate_max_table();" >
         <div id="graph">
             <div id="graph-1">
 
@@ -86,6 +105,6 @@
 <footer>
     <p>&copy;Copyright notice</p>
 </footer>
-<script type="text/javascript" src="../functions/functionsSJF.js"></script>
+<script type="text/javascript" src="../functions/functionsFCFS.js"></script>
 </body>
 </html>
