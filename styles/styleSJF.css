@@ -1,0 +1,191 @@
+/* HTML */
+*{
+    border:0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Header */
+header{
+    height: 60%;
+}
+/* Nav */
+.logo{
+    width: 3%;
+    height: 3%;
+}
+.nav{
+    display: flex;
+    background-color: black;
+    color: white;
+    padding: 3%;
+    margin: 3%;
+}
+.nav-tag{
+    background-color: black;
+    color: white;
+    padding-right: 4%;
+    padding-left: 4%;
+
+}
+.nav-tag:hover{
+    border: 1px solid #ffffff;
+
+}
+
+/* Main */
+
+main{
+    padding: 3%;
+    margin: 3%;
+}
+
+#title{
+    padding: 34px;
+}
+
+    .form-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-bottom: 5%;
+        align-items: center;
+    }
+        .ArrTime-row, .BurTime-row, .Button-row{
+            display: flex;
+            flex-direction: row;
+        }
+            #Process, #BurTime, #ArrTime {
+                padding: 10px;
+                border: 1px solid black;
+            }
+
+
+    #mini-table{
+        display: flex;
+        flex-direction: column;
+    }
+
+th, td{
+    width: 100px;
+    padding: 3px;
+    border: 1px solid black;
+}
+
+
+
+label{
+    padding:  0  30px  0 30px;
+}
+#add{
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #7fb6b6;
+}
+#add:hover{
+    border: 1px solid red;
+}
+
+/*chart*/
+.sub-content{
+    margin-top: 34px;
+    width: 60%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#graphic:hover{
+    border: 1px solid red;
+}
+
+
+#box-1,#box-2, #box-3, #box-4{
+
+    border: 1px solid black;
+}
+#graph{
+    width: 100%;
+    display: flex;
+    flex-direction:column ;
+    align-self: center;
+}
+#graph-1{
+    width: 100%;
+    display: flex;
+}
+#graph-2{
+    width: 100%;
+    display: flex;
+
+}
+#box-1{
+    width: 10%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+#box-2{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+
+}
+#box-3{
+    width: 10%;
+
+}
+#box-4{
+    width: 95%;
+    display: flex;
+    text-align: center;
+
+
+}
+
+
+#casilla{
+    width: 20px;
+    height: auto;
+    background-color: #ffe5e5;
+    border: 1px solid black;
+}
+
+#divid{
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+
+}
+#divi2{
+    width: 20px;
+    height: auto;
+    background-color: yellowgreen;
+    border: 1px solid black;
+}
+
+/* Footer */
+footer{
+    background-color: black;
+    display: flex;
+    color: white;
+    padding: 3%;
+    margin: 3%;
+}
+
+#big-table{
+    display: none;
+}
+#box-1 h4{
+    width: 40px;
+    height: 20px;
+}
+
+#box-4 h4{
+    width: 20px;
+    height: 20px;
+}
