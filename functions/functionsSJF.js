@@ -9,15 +9,16 @@ let avg = 0;
 let average;
 let max_table
 let values;
-let ArrTimeArray = [], BurTimeArray= [], ProcessArray= [];
-let Arrayvalues =[];
+let ArrTimeArray = [], BurTimeArray = [], ProcessArray = [];
+let Arrayvalues = [];
+let Arrayvaluescopy = [];
 let aux;
 let aux1 = 0;
 let aux2 = 0;
 let p = 0;
 let example = 0;
 let suma = 0;
-let m=0;
+let m = 0;
 
 function generate_mini_table() {
 
@@ -58,13 +59,13 @@ function generate_mini_table() {
     //array
     values = ArrTime + ":" + BurTime + ":" + Process;
 
-    Arrayvalues.push([parseInt(ArrTime),parseInt(BurTime),Process]);
+    Arrayvalues.push([parseInt(ArrTime), parseInt(BurTime), Process]);
 
     cont_process++;
 
 }
 
-function generate_max_table() {
+function generate_max_table(start) {
 
     mini_table = document.getElementById("mini-table");
     max_table = document.getElementById("big-table");
@@ -74,11 +75,11 @@ function generate_max_table() {
 
     //ordenar por Arrival Time
     Arrayvalues.sort(sortFunction);
+
     function sortFunction(a, b) {
         if (a[0] === b[0]) {
             return 0;
-        }
-        else {
+        } else {
             return (a[0] < b[0]) ? -1 : 1;
         }
     }
@@ -86,61 +87,58 @@ function generate_max_table() {
     console.table(Arrayvalues);
 
     //ordenar por BurstTime
-    for (p = 0; p < Arrayvalues.length-1; p++) {
-        aux1 = parseInt(Arrayvalues[p][0]);
+    sortbyBurstTime();
 
-        if (Arrayvalues.length == 2) {
-            if (parseInt(Arrayvalues[0][1]) > parseInt(Arrayvalues[1][1])) {
-                console.log("hola")
+    function sortbyBurstTime() {
+        Arrayvaluescopy = Arrayvalues;
+        for (p = 1; p <= Arrayvalues.length - 1; p++) {
+            if (Arrayvalues[p][0] === Arrayvalues[p - 1][0] && Arrayvalues[p][1] < Arrayvalues[p - 1][1]) {
+
+                aux = Arrayvalues[p - 1];
+                Arrayvalues[p - 1] = Arrayvalues[p];
+                Arrayvalues[p] = aux;
+                sortbyBurstTime();
+                console.table(Arrayvalues);
             } else {
-                Arrayvalues.slice(0, 1, Arrayvalues[1]);
-                Arrayvalues.slice(1, 1, Arrayvalues[0]);
-
+                console.log("Entro en el primer else")
             }
-        } else if (Arrayvalues.length == 1) {
-            console.log("hola")
-        } else {
-            if (p === Arrayvalues.length - 1) {
+        }
+    }
+
+    console.table(Arrayvalues);
+    //suma
+
+
+    if (Arrayvalues.length == 1) {
+        Arrayvalues[0].push(Arrayvalues[0][0]);
+    } else if (Arrayvalues.length > 1) {
+        for (let i = 1; i <= Arrayvalues.length -1; i++) {
+            let num1 = Arrayvalues[i][0];
+            let num2 = Arrayvalues[i - 1][0];
+
+            if (!num1 == null) {
 
             } else {
-                aux2 = parseInt(Arrayvalues[p + 1][0]);
-                if (aux1 == aux2) {
+                if (num1 <= suma && num2 <= suma) {
+                    if (Arrayvalues[i][1] < Arrayvalues[i - 1][1]) {
+                        Arrayvalues[i].push(suma);
 
+                        aux = Arrayvalues[i - 1];
+                        Arrayvalues[i - 1] = Arrayvalues[i];
+                        Arrayvalues[i] = aux;
 
-                    if (parseInt(Arrayvalues[p][1]) > parseInt(Arrayvalues[p + 1][1])) {
-                        console.log("hola")
                     } else {
-                        Arrayvalues.slice(p, 1, Arrayvalues[p + 1]);
-                        Arrayvalues.slice(p + 1, 1, Arrayvalues[p]);
-
+                        Arrayvalues[i-1].push(suma);
                     }
+                }  else {
+                    Arrayvalues[i - 1].push(suma);
+
                 }
             }
+            suma += Arrayvalues[i - 1][1];
         }
 
-
-    }
-    console.table(Arrayvalues);
-    for (let z = 0; z < Arrayvalues.length; z++) {
-
-        if (Arrayvalues[z][0] == 0 && z == 0) {
-            Arrayvalues[z].push("0");
-
-        } else if (Arrayvalues.length == 1) {
-            Arrayvalues[z].push(Arrayvalues[z][0]);
-
-        } else {
-
-            if (parseInt(Arrayvalues[z][0]) >= suma) {
-                Arrayvalues[z].push(suma);
-            } else if (parseInt(Arrayvalues[z][0]) < parseInt(Arrayvalues[z - 1][1])) {
-                Arrayvalues[z].push(suma);
-            } else {
-                Arrayvalues[z].push(parseInt(parseInt(Arrayvalues[z][0])));
-            }
-        }
-        suma += parseInt(Arrayvalues[z][1]);
-
+        Arrayvalues[Arrayvalues.length - 1].push(suma);
     }
 
 
@@ -161,8 +159,7 @@ function colocar_datos() {
     function compareThirdColumn(a, b) {
         if (a[2] === b[2]) {
             return 0;
-        }
-        else {
+        } else {
             return (a[2] < b[2]) ? -2 : 2;
         }
     }
